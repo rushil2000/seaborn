@@ -1,0 +1,14 @@
+import seaborn as sns
+import pandas as pd
+import matplotlib.pyplot as plt
+days = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
+temperature = [35,39,40,41.3,45,32,43.4,45,45.6,40.1,43.1,45,46.6,47,47.8]
+temp_df = pd.DataFrame({"days":days, "temperature":temperature})
+plt.figure(figsize = (16,9))
+sns.set(style= 'darkgrid')
+sns.lineplot(x ="size", y = "total_bill", data =tips_df,hue = "day",style = "day", palette = "hot"
+             ,dashes = False,markers = ["o","<",">","^"],legend = "full" )
+plt.title("Line Plot",fontsize = 15)
+plt.xlabel("size",fontsize = 15)
+plt.ylabel("total_bill",fontsize = 15)
+plt.show()
