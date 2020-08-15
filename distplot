@@ -1,0 +1,15 @@
+import seaborn as sns 
+from scipy.stats import norm
+import matplotlib.pyplot as plt
+tips_df = sns.load_dataset("tips")
+tips_df
+bins = [1,5,10,15,20,25,30,35,40,45,50,55]
+plt.figure(figsize=(16,9))
+sns.set()
+sns.distplot(tips_df["total_bill"],label = "Total Bill",bins = bins,hist_kws = {'color':'k','edgecolor':'#aaff00',
+            'linewidth':5,'linestyle':'--','alpha':0.9},kde =False,fit = norm,fit_kws = {'color':'m','linewidth':5,'linestyle':'--','alpha':0.9}
+            ,rug = True,rug_kws={'color':'b','edgecolor':'y','linewidth':5,'linestyle':'--','alpha':0.9})
+plt.title("histogram of total bill",fontsize = 15)
+plt.xlabel("total bill",fontsize = 15)
+plt.legend()
+plt.show()
