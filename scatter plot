@@ -1,0 +1,9 @@
+import seaborn as sns 
+from scipy.stats import norm
+import matplotlib.pyplot as plt
+titanic_df = sns.load_dataset("titanic")
+titanic_df
+
+plt.figure(figsize=(16,9))
+sns.scatterplot(x = "who", y = "fare", data = titanic_df,hue = "alive",style = "alive",size = "who",sizes = (100,400),palette = "inferno_r",alpha = 0.9)
+plt.show()
